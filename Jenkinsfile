@@ -1,7 +1,8 @@
 pipeline {
   environment {
-    registry = "akshaysonawane153/docker-jenkins-integration"
-    registryCredential = 'dockerhub'
+    registry = "akshaydocker153/docker-jenkins-integration"
+    registryCredential = 'dockerhub_cred'
+    dockerImage=''
   }
   agent any
   stages {
