@@ -1,2 +1,8 @@
 FROM busybox
-CMD echo "Hello this is a docker image."
+RUN yum -y update && \
+    yum -y install httpd && \
+    yum clean all
+COPY ./sample_program.sh /tmp
+RUN chmod +x /sample_program.sh
+ENTRYPOINT ["/sample_program.sh"]
+CMD echo "Copying sample_program.sh to docker...."
